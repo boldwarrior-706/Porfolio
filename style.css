@@ -1,0 +1,310 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        a {
+            color: floralwhite;
+            text-decoration: none;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            width: 100%;
+            background: #000;
+            margin: 20px 0;
+        }
+        
+        /* --- Navigation --- */
+        nav {
+            background-color: #2C2634;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* --- Intro Section --- */
+        .intro-section {
+            text-align: center;
+            padding: 80px 20px;
+            /* Added max-width and margin for desktop view */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .intro-section p {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            /* Great use of clamp! */
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .intro-section .name {
+            color: orangered;
+        }
+        
+        /* --- About Me Section --- */
+        .about-me-container {
+            /* This wrapper helps control width on large screens */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .about-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            padding-top: 30px;
+        }
+        
+        .about-text {
+            font-size: 20px;
+            padding: 10px;
+            line-height: 1.6;
+        }
+        
+        .about-text .name {
+            font-weight: bolder;
+            color: orangered;
+        }
+        
+        /* --- Projects Section --- */
+        .projects-section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            /* Added max-width and margin for desktop view */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .projects-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            padding: 30px 0 0 0;
+            margin: 0;
+        }
+        
+        .projects-container {
+            display: grid;
+            /* This is already perfectly responsive! */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card>* {
+            margin-bottom: 15px;
+        }
+        
+        .project-card> :last-child {
+            margin-bottom: 0;
+        }
+        
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C2634;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+            /* Allows description to fill space */
+        }
+        
+        .project-tech {
+            font-size: 14px;
+            color: orangered;
+            font-weight: bold;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            /* Pushes links to the bottom */
+        }
+        
+        .project-link {
+            background-color: #2C2634;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background-color: orangered;
+        }
+        
+        /* --- Media Query for Small Screens --- */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .intro-section,
+            .projects-section {
+                padding: 40px 15px;
+            }
+            
+            .about-text {
+                font-size: 16px;
+            }
+            
+            .project-card {
+                padding: 15px;
+            }
+            
+            .project-title {
+                font-size: 20px;
+            }
+            
+            .project-description {
+                font-size: 14px;
+            }
+            
+            .project-tech {
+                font-size: 12px;
+            }
+            
+            .project-link {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+        
+        /* =========== SKILLS SECTION STYLES =========== */
+        
+        .skills-section {
+            padding: 60px 20px;
+            /* More padding for a spacious look */
+            background-color: #f9f9f9;
+            /* A slightly off-white background */
+            text-align: center;
+        }
+        
+        .skills-section .section-title {
+            font-size: 2.5rem;
+            /* Use rem for better accessibility */
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            /* Ensures the underline is only as wide as the text */
+        }
+        
+        /* Underline effect for the section title */
+        .skills-section .section-title::after {
+            content: '';
+            width: 70%;
+            height: 4px;
+            background-color: #3498db;
+            /* A nice blue accent color */
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            /* Allows cards to wrap on smaller screens */
+            max-width: 1000px;
+            margin: 0 auto;
+            /* Center the container */
+        }
+        
+        .skill-category {
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            padding: 25px;
+            flex: 1;
+            /* Allows categories to grow */
+            min-width: 250px;
+            /* Minimum width before wrapping */
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            /* Lifts the card on hover */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skill-category li {
+            background-color: #ecf0f1;
+            color: #34495e;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        /* Remove margin from the last list item */
+        .skill-category li:last-child {
+            margin-bottom: 0;
+        }
+        .exp{
+            background-color: lightgrey;
+            border: 1px solid ;
+        }

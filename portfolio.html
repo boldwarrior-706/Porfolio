@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <title>Simple Portfolio</title>
+    <style>
+        /* --- General Styles & Reset --- */
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education & Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="portfolio" class="intro-section">
+            <p>Hi</p>
+            <p>I'm <span class="name">BURHAN BILAL</span></p>
+            <p>a Web Developer</p>
+        </section>
+        
+        <section id="services" class="about-me-container">
+            <h1 class="about-title">ABOUT ME</h1>
+            <hr>
+            <p class="about-text">
+                Hey, I'm <span class="name">Burhan Bilal</span>. I am a 16-year-old from Kashmir learning web development. I've taught myself HTML, CSS, and some JavaScript. My philosophy is that if you have a passion for something, you should pursue it. If you don't start today, you might never start. I have that passion, so I started early. You can check out all my projects on my GitHub page.
+            </p>
+            <hr>
+        </section>
+        
+<section id="experience" style="min-height: 400px; background-color: #e6e6e6; padding: 40px 20px; text-align: center;">
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; color: #2C2634;">MY JOURNEY & EXPERIENCE</h1>
+    <hr style="width: 80%; max-width: 600px; margin: 0 auto 30px auto; background-color: orangered;">
+
+    <div class="exp-content" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6; color: #333;">
+        <p>
+            As a budding web developer, my journey began just **two months ago**, driven by a strong passion for building things on the web. While I'm still in the early stages, I've dedicated myself to consistently learning and practicing.
+        </p>
+        <p style="margin-top: 15px;">
+            So far, I've focused on mastering the core building blocks of the web:
+            <ul style="list-style-type: none; padding: 0; margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <li style="background-color: #2C2634; color: white; padding: 8px 15px; border-radius: 5px;">HTML (Structuring Content)</li>
+                <li style="background-color: #2C2634; color: white; padding: 8px 15px; border-radius: 5px;">CSS (Styling & Layout)</li>
+                <li style="background-color: #2C2634; color: white; padding: 8px 15px; border-radius: 5px;">JavaScript (Basic Interactivity)</li>
+            </ul>
+        </p>
+        <p style="margin-top: 15px;">
+            I'm constantly exploring new concepts and eager to tackle more complex projects to deepen my understanding and expand my skill set. My calculator project (which you can see in the Projects section) is a testament to the practical application of my current knowledge.
+        </p>
+    </div>
+</section>
+
+        
+        <section id="projects" class="projects-section">
+            <h1 class="projects-title">MY PROJECTS</h1>
+            <hr>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">Phone Style Calculator</h3>
+                    <p class="project-description">
+                        This is my first real-world project: a fully functional calculator designed with HTML, CSS, and JavaScript.
+                    </p>
+                    <p class="project-tech">Technologies: HTML, CSS, JavaScript</p>
+                    <div class="project-links">
+                        <a href="https://boldwarrior-706.github.io/calculator/" class="project-link" target="_blank">Live Demo</a>
+                        <a href="https://github.com/boldwarrior-706/calculator" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </section>
+        
+        <section id="education" style="min-height: 400px; background-color: #f0f0f0; padding: 20px;">
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 20px;">MY EDUCATION</h1>
+            <hr style="width: 80%; margin-bottom: 40px;">
+            <section class="skills-section" id="skills">
+                <h2 class="section-title">My Skills 🛠️</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3 & Sass</li>
+                            <li>JavaScript learning about it</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Methods</h3>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>Webpack</li>
+                            <li>Jest & Testing</li>
+                            <li>Agile / Scrum</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+    </main>
+    
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default jump behavior
+                
+                const targetId = this.getAttribute('href'); // Get the href value (e.g., "#portfolio")
+                const targetSection = document.querySelector(targetId); // Find the section with that ID
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth' // Smooth scroll effect
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
